@@ -268,6 +268,9 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: constellation; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.constellation VALUES (1, 'sagittarius', '', '', '');
+INSERT INTO public.constellation VALUES (2, 'aries', '', '', '');
+INSERT INTO public.constellation VALUES (3, 'orion', '', '', '');
 
 
 --
@@ -275,6 +278,11 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 --
 
 INSERT INTO public.galaxy VALUES (1, 'Milky Way', 'Hello type', NULL, NULL);
+INSERT INTO public.galaxy VALUES (2, 'Andromeda', '', NULL, NULL);
+INSERT INTO public.galaxy VALUES (3, 'Triangulum', '', NULL, NULL);
+INSERT INTO public.galaxy VALUES (4, 'Centaurus A', '', NULL, NULL);
+INSERT INTO public.galaxy VALUES (5, 'Sculptor Galaxy', '', NULL, NULL);
+INSERT INTO public.galaxy VALUES (6, 'Cigar Galaxy', '', NULL, NULL);
 
 
 --
@@ -288,14 +296,31 @@ INSERT INTO public.moon VALUES (1, 'Luna', 1, NULL, NULL);
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.planet VALUES (1, 'Earth', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (1, 'Mercury', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (2, 'Venus', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (3, 'Earth', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (4, 'Mars', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (5, 'Jupiter', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (6, 'Saturn', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (7, 'Uranus', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (8, 'Neptune', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (9, 'Pluto', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (10, 'Ceres', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (11, 'Haumea', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (12, 'Eris', 1, NULL, NULL, NULL);
+INSERT INTO public.planet VALUES (13, 'Makemake', 1, NULL, NULL, NULL);
 
 
 --
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.star VALUES (1, 'Milky Way', 1, NULL, NULL);
+INSERT INTO public.star VALUES (2, 'Stephenson 2', 1, NULL, NULL);
+INSERT INTO public.star VALUES (1, 'The Sun', 1, NULL, NULL);
+INSERT INTO public.star VALUES (3, 'AH Scorpii', 1, NULL, NULL);
+INSERT INTO public.star VALUES (4, 'VY Canis Majoris', 1, NULL, NULL);
+INSERT INTO public.star VALUES (5, 'BC Cygni', 1, NULL, NULL);
+INSERT INTO public.star VALUES (6, 'PZ Cassiopeiae', 1, NULL, NULL);
 
 
 --
