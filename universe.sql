@@ -49,7 +49,8 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.constellation (
     constellation_id integer NOT NULL,
-    name character varying(60)
+    name character varying(60),
+    discription text
 );
 
 
@@ -154,7 +155,10 @@ ALTER SEQUENCE public.moon_moon_id_seq OWNED BY public.moon.moon_id;
 CREATE TABLE public.planet (
     planet_id integer NOT NULL,
     name character varying(60),
-    star_id integer
+    star_id integer,
+    n_moons integer,
+    have_moons boolean,
+    year_discovered numeric
 );
 
 
@@ -189,7 +193,9 @@ ALTER SEQUENCE public.planet_planet_id_seq OWNED BY public.planet.planet_id;
 CREATE TABLE public.star (
     star_id integer NOT NULL,
     name character varying(60),
-    galaxy_id integer
+    galaxy_id integer,
+    n_planets integer,
+    have_planets boolean
 );
 
 
@@ -276,14 +282,14 @@ INSERT INTO public.moon VALUES (1, 'Luna', 1);
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.planet VALUES (1, 'Earth', 1);
+INSERT INTO public.planet VALUES (1, 'Earth', 1, NULL, NULL, NULL);
 
 
 --
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.star VALUES (1, 'Milky Way', 1);
+INSERT INTO public.star VALUES (1, 'Milky Way', 1, NULL, NULL);
 
 
 --
