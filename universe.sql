@@ -289,7 +289,26 @@ INSERT INTO public.galaxy VALUES (6, 'Cigar Galaxy', '', NULL, NULL);
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.moon VALUES (1, 'Luna', 1, NULL, NULL);
+INSERT INTO public.moon VALUES (2, 'Phobos', 4, NULL, NULL);
+INSERT INTO public.moon VALUES (3, 'Deimos', 4, NULL, NULL);
+INSERT INTO public.moon VALUES (1, 'Luna', 3, NULL, NULL);
+INSERT INTO public.moon VALUES (4, 'Io', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (5, 'Europa', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (6, 'Ganymede', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (7, 'Callisto', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (8, 'Titan', 6, NULL, NULL);
+INSERT INTO public.moon VALUES (9, 'Enceladus', 6, NULL, NULL);
+INSERT INTO public.moon VALUES (10, 'Ariel', 7, NULL, NULL);
+INSERT INTO public.moon VALUES (11, 'Titania', 7, NULL, NULL);
+INSERT INTO public.moon VALUES (12, 'Umbriel', 7, NULL, NULL);
+INSERT INTO public.moon VALUES (13, 'Triton', 8, NULL, NULL);
+INSERT INTO public.moon VALUES (14, 'Dia', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (15, 'Adrastea', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (16, 'Aitne', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (17, 'Amalthea', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (18, 'Ananke', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (19, 'Aoede', 5, NULL, NULL);
+INSERT INTO public.moon VALUES (20, 'Arche', 5, NULL, NULL);
 
 
 --
