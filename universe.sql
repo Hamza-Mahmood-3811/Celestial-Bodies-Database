@@ -49,8 +49,10 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.constellation (
     constellation_id integer NOT NULL,
-    name character varying(60),
-    discription text
+    name character varying(60) NOT NULL,
+    discription text,
+    mythological_origin character varying(60),
+    associated_zodiac_sign character varying(60)
 );
 
 
@@ -84,8 +86,10 @@ ALTER SEQUENCE public.constellation_constellation_id_seq OWNED BY public.constel
 
 CREATE TABLE public.galaxy (
     galaxy_id integer NOT NULL,
-    name character varying(60),
-    type character varying(60)
+    name character varying(60) NOT NULL,
+    type character varying(60),
+    year_discovered numeric,
+    size_ly integer
 );
 
 
@@ -119,8 +123,10 @@ ALTER SEQUENCE public.galaxy_galaxy_id_seq OWNED BY public.galaxy.galaxy_id;
 
 CREATE TABLE public.moon (
     moon_id integer NOT NULL,
-    name character varying(60),
-    planet_id integer
+    name character varying(60) NOT NULL,
+    planet_id integer,
+    year_discovered numeric,
+    radius_km double precision
 );
 
 
@@ -154,7 +160,7 @@ ALTER SEQUENCE public.moon_moon_id_seq OWNED BY public.moon.moon_id;
 
 CREATE TABLE public.planet (
     planet_id integer NOT NULL,
-    name character varying(60),
+    name character varying(60) NOT NULL,
     star_id integer,
     n_moons integer,
     have_moons boolean,
@@ -192,7 +198,7 @@ ALTER SEQUENCE public.planet_planet_id_seq OWNED BY public.planet.planet_id;
 
 CREATE TABLE public.star (
     star_id integer NOT NULL,
-    name character varying(60),
+    name character varying(60) NOT NULL,
     galaxy_id integer,
     n_planets integer,
     have_planets boolean
@@ -268,14 +274,14 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.galaxy VALUES (1, 'Milky Way', 'Hello type');
+INSERT INTO public.galaxy VALUES (1, 'Milky Way', 'Hello type', NULL, NULL);
 
 
 --
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.moon VALUES (1, 'Luna', 1);
+INSERT INTO public.moon VALUES (1, 'Luna', 1, NULL, NULL);
 
 
 --
@@ -328,6 +334,14 @@ SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
 
 
 --
+-- Name: constellation constellation_constellation_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.constellation
+    ADD CONSTRAINT constellation_constellation_id_key UNIQUE (constellation_id);
+
+
+--
 -- Name: constellation constellation_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -336,11 +350,27 @@ ALTER TABLE ONLY public.constellation
 
 
 --
+-- Name: galaxy galaxy_galaxy_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.galaxy
+    ADD CONSTRAINT galaxy_galaxy_id_key UNIQUE (galaxy_id);
+
+
+--
 -- Name: galaxy galaxy_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.galaxy
     ADD CONSTRAINT galaxy_pkey PRIMARY KEY (galaxy_id);
+
+
+--
+-- Name: moon moon_moon_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.moon
+    ADD CONSTRAINT moon_moon_id_key UNIQUE (moon_id);
 
 
 --
@@ -360,11 +390,27 @@ ALTER TABLE ONLY public.planet
 
 
 --
+-- Name: planet planet_planet_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.planet
+    ADD CONSTRAINT planet_planet_id_key UNIQUE (planet_id);
+
+
+--
 -- Name: star star_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.star
     ADD CONSTRAINT star_pkey PRIMARY KEY (star_id);
+
+
+--
+-- Name: star star_star_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.star
+    ADD CONSTRAINT star_star_id_key UNIQUE (star_id);
 
 
 --
